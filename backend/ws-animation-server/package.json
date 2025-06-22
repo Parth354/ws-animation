@@ -1,0 +1,14 @@
+{
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon index.mjs",
+    "start": "node index.mjs"
+  },
+  "dependencies": {
+    "ws": "^8",
+    "uuid": "^9"
+  },
+  "devDependencies": {
+    "nodemon": "^3"
+  }
+}
