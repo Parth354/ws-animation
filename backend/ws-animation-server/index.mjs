@@ -1,10 +1,11 @@
+// index.mjs
 import http from 'http';
 import { WebSocketServer } from 'ws';
 import { AnimationServer } from './core/AnimationServer.mjs';
 
-const animationServer = new AnimationServer();
-
 const port = process.env.PORT || 8080;
+
+const animationServer = new AnimationServer();
 
 const httpServer = http.createServer((req, res) => {
   res.setHeader('Content-Type', 'application/json');
@@ -24,7 +25,7 @@ const httpServer = http.createServer((req, res) => {
 });
 
 const wss = new WebSocketServer({ server: httpServer });
-animationServer.attach(wss);
+animationServer.attach(wss); 
 
 httpServer.listen(port, () => {
   console.log(`🚀 HTTP + WebSocket server listening on port ${port}`);
