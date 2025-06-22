@@ -1,1 +1,45 @@
 @import "tailwindcss";
+.glow-bottom {
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  background: transparent; /* <== fully transparent now */
+}
+
+.glow-bottom::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  transform: scale(0.95); /* controls glow distance */
+  background: linear-gradient(
+    to left,
+    #ff5770,
+    #e4428d,
+    #c42da8,
+    #9e16c3,
+    #6501de,
+    #9e16c3,
+    #c42da8,
+    #e4428d,
+    #ff5770
+  );
+  background-size: 300% 300%;
+  animation: animateGlow 2.5s linear infinite;
+  filter: blur(30px);
+  z-index: -1;
+  opacity: 1;
+  pointer-events: none;
+}
+
+@keyframes animateGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
