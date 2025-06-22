@@ -1,5 +1,5 @@
 export const WS_PORT = 8080;
-export const HTTP_PORT = 8081;
+export const HTTP_PORT = 8080;
 export const FRAME_RATE = 60;
 export const MAX_CLIENTS = 100;
 export const HEARTBEAT_INTERVAL = 30_000;
